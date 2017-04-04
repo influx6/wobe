@@ -26,6 +26,7 @@ func main() {
 	signal.Notify(stopChan, os.Interrupt)
 
 	tree := httptreemux.New()
+	tree.Handle("GET", "/", welcome)
 	tree.Handle("POST", "/echo", handleEcho)
 	tree.Handle("POST", "/reverse", handleReverse)
 
@@ -47,6 +48,13 @@ func main() {
 	srv.Shutdown(ctx)
 
 	log.Println("Server gracefully stopped")
+}
+
+//================================================================================
+
+func welcome(w http.ResponseWriter, r *http.Request, params map[string]string) {
+	w.WriteHeader(http.StatusOK)
+	w.Write([]byte("Weclome to Wobe Echo"))
 }
 
 //================================================================================
