@@ -1,0 +1,16 @@
+language: go
+
+services:
+  - docker
+
+env:
+  - CGO_ENALBED=1 GOARCH=amd64 GOOS=linux
+
+go:
+  - master
+
+install:
+  - docker build -f travis.Dockerfile -t influx6/wobe-static ./
+
+script:
+  - echo "Done!"
