@@ -87,6 +87,25 @@ func handleReverse(w http.ResponseWriter, r *http.Request, params map[string]str
 // handleEcho receives a json data and echos back the given data received.
 // Expects: {input:"DATA"} json.
 func handleEcho(w http.ResponseWriter, r *http.Request, params map[string]string) {
+	var pack dataPack
+
+	if err := json.NewDecoder(r.Body).Decode(&pack); err != nil {
+		http.Error(w, "Invalid Data Recieved: "+err.Error(), http.StatusInternalServerError)
+		return
+	}
+
+	var bu bytes.Buffer
+
+	if err := json.NewEncoder(&bu).Encode(responsePack{
+		Output: pack.Input,
+	}); err != nil {
+		http.Error(w, "Invalid Data Recieved: "+err.Error(), http.StatusInternalServerError)
+		return
+	}
+
+	w.WriteHeader(http.StatusOK)
+
+	io.Copy(w, &bu)
 }
 
 func reverse(s string) string {
