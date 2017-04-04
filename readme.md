@@ -9,3 +9,10 @@ Install
 -	Have heroku setup on your system as describe in https://devcenter.heroku.com/articles/getting-started-with-go
 
 -	Run `make` and `make heroku` on the terminal
+
+-	Test App by sending the following through the terminal
+
+```bash
+curl -v localhost:4040/reverse -d '{"input": "bomba"}'
+curl -v localhost:4040/reverse -d '{"input": "bomba"}'
+```

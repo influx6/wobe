@@ -10,4 +10,4 @@ clean:
 	rm -rf $(DOCKER_BUILD)
 
 heroku: $(DOCKER_CMD)
-	heroku container:push web --app wobe
+	heroku container:push web
