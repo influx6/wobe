@@ -1,14 +1,16 @@
 package main
 
 import (
+	"bytes"
 	"context"
 	"encoding/json"
-	"fmt"
+	"io"
 	"log"
 	"net/http"
 	"os"
 	"os/signal"
 	"time"
+	"unicode/utf8"
 
 	"github.com/dimfeld/httptreemux"
 )
@@ -24,8 +26,8 @@ func main() {
 	signal.Notify(stopChan, os.Interrupt)
 
 	tree := httptreemux.New()
-	tree.Handle("GET", "/echo", handleEcho)
-	tree.Handle("GET", "/reverse", handleReverse)
+	tree.Handle("POST", "/echo", handleEcho)
+	tree.Handle("POST", "/reverse", handleReverse)
 
 	srv := &http.Server{Addr: ":" + port, Handler: tree}
 
@@ -68,11 +70,31 @@ func handleReverse(w http.ResponseWriter, r *http.Request, params map[string]str
 		return
 	}
 
-	fmt.Printf("Recieved: %+q\n", pack)
+	var bu bytes.Buffer
+
+	if err := json.NewEncoder(&bu).Encode(responsePack{
+		Output: json.RawMessage([]byte(reverse(string(pack.Input)))),
+	}); err != nil {
+		http.Error(w, "Invalid Data Recieved: "+err.Error(), http.StatusInternalServerError)
+		return
+	}
+
+	w.WriteHeader(http.StatusOK)
+
+	io.Copy(w, &bu)
 }
 
 // handleEcho receives a json data and echos back the given data received.
 // Expects: {input:"DATA"} json.
 func handleEcho(w http.ResponseWriter, r *http.Request, params map[string]string) {
+}
 
+func reverse(s string) string {
+	cs := make([]rune, utf8.RuneCountInString(s))
+	i := len(cs)
+	for _, c := range s {
+		i--
+		cs[i] = c
+	}
+	return string(cs)
 }
