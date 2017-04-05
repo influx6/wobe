@@ -69,8 +69,8 @@ Only issue to watch out for is:
 
 Based on giving plans on the Heroku platform, you can do the following to scale:
 
--	Depending on dyno types scaling has limits on Heroku so, ensure to check https://devcenter.heroku.com/articles/scaling#scaling-limits.
+-	Depending on dyno types, scaling has limits on Heroku so, ensure to check https://devcenter.heroku.com/articles/scaling#scaling-limits.
 
--	Move subscription of app from a free-tier dyno to a professional-tier dyno which provides quick access to the manual scaling ability where you can add more dynos to handle concurrent requests managed, this allows you to scale up or down manually through the App Dashboard.
+-	Move subscription of app from a free-tier dyno to a professional-tier dyno which provides quick access to the manual scaling functionality, where you can add more dynos to handle concurrent requests, this allows you to scale up or down manually through the App Dashboard.
 
 -	If using the performance-tier dyno, then auto-scaling can be configured for the apps associated with this tier. See more at https://devcenter.heroku.com/articles/scaling
