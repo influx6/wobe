@@ -13,6 +13,8 @@ Install
 Heroku
 ------
 
+Reverse Only Service: https://wobe.heroku.com/
+
 To be able to deploy to the [Heroku](https://heroku.com) platform simply do:
 
 -	Navigate to `deploy/wobe-heroku`
@@ -36,17 +38,17 @@ Testing
 -	Test App by sending the following through the terminal
 
 ```bash
-curl -v localhost:$PORT/reverse -d '{"input": "bomba"}'
+curl -v $HOST:$PORT/reverse -d '{"input": "bomba"}'
 ```
 
 -	Test `echo` endpoint by switching into the `echo` branch and deploy once again
 
 ```bash
-curl -v localhost:$PORT/reverse -d '{"input": "bomba"}'
-curl -v localhost:$PORT/echo -d '{"input": "bomba"}'
+curl -v $HOST:$PORT/reverse -d '{"input": "bomba"}'
+curl -v $HOST:$PORT/echo -d '{"input": "bomba"}'
 ```
 
-Note that `$PORT` is a placeholder for the port deployed to on the platform used.
+Note that `$HOST` is a placeholder for the URL address of the deployed app and that `$PORT` is a placeholder for the port deployed to on the platform used.
 
 -	The Now deployment by default uses port `7080`
 
