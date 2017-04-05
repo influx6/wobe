@@ -44,8 +44,8 @@ curl -v $HOST:$PORT/reverse -d '{"input": "bomba"}'
 -	Test `echo` endpoint by switching into the `echo` branch and deploy once again
 
 ```bash
-curl -v $HOST:$PORT/reverse -d '{"input": "bomba"}'
-curl -v $HOST:$PORT/echo -d '{"input": "bomba"}'
+curl -v $HOST/reverse -d '{"input": "bomba"}'
+curl -v $HOST/echo -d '{"input": "bomba"}'
 ```
 
 Note that `$HOST` is a placeholder for the URL address of the deployed app the platform used.
