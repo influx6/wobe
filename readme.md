@@ -13,7 +13,7 @@ Install
 Heroku
 ------
 
-Reverse Only Service: https://wobe.heroku.com/
+Reverse Only Service: https://wobe.herokuapp.com/
 
 To be able to deploy to the [Heroku](https://heroku.com) platform simply do:
 
