@@ -1,10 +1,12 @@
 CREATEAPP := heroku create wobe
-DEPLOYAPP := heroku container:push web
+DEPLOYAPP := heroku container:push web --app wobe
 CLEANAPP := heroku destroy wobe
 
 deploy:
-	$(CREATEAPP)
 	$(DEPLOYAPP)
+
+create:
+	$(CREATEAPP)
 
 clean:
 	$(CLEANAPP)
