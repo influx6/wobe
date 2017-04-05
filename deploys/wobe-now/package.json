@@ -1,0 +1,6 @@
+{
+  "name":"wobe",
+  "scripts":{
+    "start": "wobe"
+   }
+}
