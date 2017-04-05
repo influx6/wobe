@@ -8,7 +8,15 @@ Install
 
 -	Have heroku setup on your system as describe in https://devcenter.heroku.com/articles/getting-started-with-go
 
+Heroku
+------
+
 -	Run `make` and `make heroku` on the terminal
+
+Now
+---
+
+-	Run `make` and `make now` on the terminal
 
 -	Test App by sending the following through the terminal
 

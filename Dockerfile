@@ -2,6 +2,6 @@ FROM golang:alpine
 
 MAINTAINER EWETUMO ALEXANDER 	<trinoxf@gmail.com>
 
-COPY ./.docker_build/wobe .
+COPY ./.docker_build/wobe /bin
 
-CMD ["/wobe/wobe"]
+CMD ["/bin/wobe"]

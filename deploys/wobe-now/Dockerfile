@@ -1,0 +1,7 @@
+FROM influx6/wobe-plain
+
+MAINTAINER ALEXANDER EWETUMO <trinoxf@gmail.com>
+
+EXPOSE 7080
+
+ENV PORT 7080
