@@ -13,13 +13,13 @@ $(INSTALL_NOW_CMD):
 clean:
 	rm -rf $(DOCKER_BUILD)
 
-heroku: $(DOCKER_CMD)
-	cd deploys/wobe-heroku
+build: $(DOCKER_CMD)
+
+heroku:
 	heroku create wobe
 	heroku container:push web
 	cd $(ROOT_CMD)
 
-now: $(DOCKER_CMD)
-	cd deploys/wobe-now
+now:
 	$(shell now)
 	cd $(ROOT_CMD)
