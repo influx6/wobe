@@ -1,7 +1,7 @@
 WobeEcho App
 ============
 
-Wobe demonstrates a simple service deployed on heroku using the experiemental docker service builds.
+Wobe demonstrates a simple service deployed to both [Heroku](https://heroku.com) and [Now](https://zeit.co/now) using the docker.
 
 Install
 -------
