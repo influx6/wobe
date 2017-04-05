@@ -48,11 +48,7 @@ curl -v $HOST:$PORT/reverse -d '{"input": "bomba"}'
 curl -v $HOST:$PORT/echo -d '{"input": "bomba"}'
 ```
 
-Note that `$HOST` is a placeholder for the URL address of the deployed app and that `$PORT` is a placeholder for the port deployed to on the platform used.
-
--	The Now deployment by default uses port `7080`
-
--	You will need to locate the `$PORT` data related to the heroku deployment from your Heroku App dashboard.
+Note that `$HOST` is a placeholder for the URL address of the deployed app the platform used.
 
 Scaling
 -------
