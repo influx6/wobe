@@ -38,7 +38,7 @@ Testing
 -	Test App by sending the following through the terminal
 
 ```bash
-curl -v $HOST:$PORT/reverse -d '{"input": "bomba"}'
+curl -v $HOST/reverse -d '{"input": "bomba"}'
 ```
 
 -	Test `echo` endpoint by switching into the `echo` branch and deploy once again
