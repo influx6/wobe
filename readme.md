@@ -20,6 +20,8 @@ To be able to deploy to the [Heroku](https://heroku.com) platform simply do:
 Now
 ---
 
+Server: https://wobe-now-jzokyjlqdt.now.sh/
+
 To be able to deploy to the [Now](https://zeit.co/now) platform simply do:
 
 -	Navigate to `deploy/wobe-now`
